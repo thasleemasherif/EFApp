@@ -1,0 +1,77 @@
+﻿@model EFApp.Biodata
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddNewStd</title>
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    
+    
+    @using (Html.BeginForm("AddNewStd", "Test", FormMethod.Post)) 
+    {
+ 
+    <div class="form-horizontal">
+        <h4>Biodata</h4>
+        <hr />
+        
+        <div class="form-group">
+            Roll Number <br />
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.rollno, new { htmlAttributes = new { @class = "form-control" } })
+               
+            </div>
+        </div>
+
+        <div class="form-group">
+            Student Name : <br />
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.stdname, new { htmlAttributes = new { @class = "form-control" } })
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            Gender : <br />
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.gender, "Male") <span>Male</span>
+                @Html.RadioButtonFor(model => model.gender, "Female") <span>Female</span>
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            City : <br />
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.city, new { htmlAttributes = new { @class = "form-control" } })
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <h2>@ViewBag.info</h2>
+            </div>
+        </div>
+
+    </div>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Biodata")
+    </div>
+</body>
+</html>

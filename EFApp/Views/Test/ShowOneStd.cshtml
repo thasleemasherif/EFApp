@@ -1,0 +1,33 @@
+﻿@model EFApp.Biodata
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowOneStd</title>
+</head>
+<body>
+    @using (Html.BeginForm("ShowOneStd", "Test", FormMethod.Post))
+    {
+        <p>Roll Number</p>
+        @Html.TextBoxFor(s => s.rollno)
+        <input type="submit" value="Get Std Details" />
+        if (ViewBag.info != "No")
+        {
+        <h1>Roll Number @Html.DisplayFor(s => s.rollno) </h1>
+        <h1>Student Name @Html.DisplayFor(s => s.stdname) </h1>
+        <h1>Gender @Html.DisplayFor(s => s.gender) </h1>
+        <h1>Location @Html.DisplayFor(s => s.city) </h1>            
+        }
+        else
+        {
+            <p>No Data</p>
+        }
+    }
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EFApp.Biodata>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Biodata</title>
+</head>
+<body>
+    <table width="100%" border="1">
+        <tr>
+            <th>Roll Number</th>
+            <th>Student Name</th>
+            <th>Gender</th>
+            <th>Location</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(ss => item.rollno) </td>
+                <td>@Html.DisplayFor(ss => item.stdname) </td>
+                <td>@Html.DisplayFor(ss => item.gender) </td>
+                <td>@Html.DisplayFor(ss => item.city) </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
